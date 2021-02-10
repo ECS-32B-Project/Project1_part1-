@@ -24,8 +24,9 @@ class Truck:
     
     # pk from here on is a instance of the Package class
     def collectPackage(self,pk):
-        if self.location == pk.office:
+        if self.location == pk.office and len(self.packages) < self.size:
             self.packages.append(pk)
+            self.collected = True
 
     
     def deliverOnePackage(self, pk):
